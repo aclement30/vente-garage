@@ -92,7 +92,7 @@ a:hover {
   transition:  box-shadow 0.2s ease-out;
 }
 
-.card-item:hover:not(.-sold) {
+.card-item:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, .2);
   transition:  box-shadow 0.2s ease-in;
 }
@@ -172,12 +172,7 @@ a:hover {
 }
 
 .card-item.-sold {
-  cursor: default;
   overflow: hidden;
-}
-
-.card-item.-sold:hover {
-  color: inherit;
 }
 
 .card-item.-sold .card-thumbnail,
@@ -240,8 +235,13 @@ a:hover {
   }
 }
 
+.item-detail .price-info {
+  display: flex;
+}
+
 .item-detail .price {
   font-size: 22px;
+  margin-right: 20px;
 }
 
 .item-detail .price.-free {

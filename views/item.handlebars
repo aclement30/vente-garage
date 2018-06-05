@@ -11,7 +11,16 @@
 
     <div class="eight columns">
       {{#if item.sold }}
-        <div class="sold-banner">Item vendu</div>
+        <div class="price-info">
+          {{#if item.price}}
+            <p class="price">
+              {{ item.price }} $
+            </p>
+            <div class="sold-banner">Item vendu</div>
+          {{else}}
+            <div class="sold-banner">Item donné</div>
+          {{/if}}
+        </div>
       {{else}}
         {{#if item.price}}
           <p class="price">
