@@ -5,8 +5,8 @@
   "scripts": {
     "start": "npm run production",
     "heroku-prebuild": "npm install",
-    "dev": "cross-env NODE_ENV=development nodemon ./bin/www",
-    "production": "cross-env NODE_ENV=production node ./bin/www"
+    "dev": "cross-env NODE_ENV=development nodemon ./bin/vente-garage.js",
+    "production": "cross-env NODE_ENV=production node ./bin/vente-garage.js"
   },
   "config": {
     "db": "mongodb://localhost/vente-garage"
