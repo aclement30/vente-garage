@@ -1,0 +1,353 @@
+body {
+  background-color: #FAFAFE;
+  color: #12283F;
+}
+
+a {
+  color: #029ecb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #01465A;
+}
+
+.navbar {
+  background-color: #12283F;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+
+.navbar h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+  padding: 20px 0;
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
+  display: inline-block;
+}
+
+.navbar h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .category {
+  display: inline-block;
+  color: #999;
+  font-size: 22px;
+  padding-left: 20px;
+  margin-left: 20px;
+  border-left: 1px solid silver;
+}
+
+@media (max-width: 549px) {
+  .navbar .category {
+    display: block;
+    border-left: none;
+    margin-left: 30px;
+    position: relative;
+    top: -15px;
+  }
+}
+
+.navbar .house-icon {
+  height: 32px;
+  vertical-align: text-bottom;
+  padding-right: 10px;
+}
+
+.main.container {
+  margin-top: 30px;
+}
+
+.category-title {
+  color: #01465A;
+  font-weight: bold;
+}
+
+.items-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.items-list .card-item:nth-child(3n+1) {
+  margin-left: 0;
+}
+
+.card-item {
+  margin-bottom: 3.5rem !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+  transition:  box-shadow 0.2s ease-out;
+}
+
+.card-item:hover:not(.-sold) {
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  transition:  box-shadow 0.2s ease-in;
+}
+
+.card-item:hover h5 {
+  color:#029ecb;
+}
+
+.card-item .card-thumbnail {
+  height: 225px;
+  width: 100%;
+  display: block;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card-item .card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-body p,
+.card-body h5 {
+  margin-bottom: 0;
+}
+
+.card-body h5 {
+  font-size: 20px;
+}
+
+.card-item:hover {
+  color: inherit;
+}
+
+.price {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+  font-size: larger;
+  color: #D60E21;
+  min-height: 30px;
+}
+
+.price.-free {
+  font-family: "Helvetica Neue";
+  font-weight: normal;
+  font-size: 15px;
+  color: black;
+}
+
+.original-price {
+  font-family: "Helvetica Neue";
+  color: black;
+  font-weight: normal;
+  font-size: smaller;
+  padding-left: 10px;
+  text-decoration: line-through;
+}
+
+.sold-banner {
+  background-color: #01465A;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.card-item .sold-banner {
+  width: 200%;
+  position: absolute;
+  top: calc(50% - 22px);
+  transform: rotate(30deg);
+  left: -50%;
+}
+
+.card-item.-sold {
+  cursor: default;
+  overflow: hidden;
+}
+
+.card-item.-sold:hover {
+  color: inherit;
+}
+
+.card-item.-sold .card-thumbnail,
+.card-item.-sold .card-body {
+  opacity: 0.3;
+}
+
+.item-detail .picture {
+  width: 100%;
+}
+
+.item-detail dl {
+  font-size: 0;
+}
+
+.item-detail dl dt {
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #dedede;
+  width: 20%;
+}
+
+.item-detail dl dd {
+  margin-left: 0;
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #dedede;
+  width: 78%;
+}
+
+.item-detail dl .icon {
+  height: 1em;
+  vertical-align: middle;
+}
+
+.item-detail dl dt:last-of-type,
+.item-detail dl dd:last-of-type {
+  border-bottom: none;
+}
+
+@media (max-width: 549px) {
+  .item-detail dl dt {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .item-detail dl dt,
+  .item-detail dl dd {
+    display: block;
+    width: 100%;
+  }
+}
+
+.item-detail .price {
+  font-size: 22px;
+}
+
+.item-detail .price.-free {
+  font-weight: bold;
+}
+
+.item-detail .sold-banner {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+
+.item-detail .picture {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.selling-notice {
+  padding: 2rem 3rem 2.5rem;
+  font-size: 90%;
+  background-color: #eaf0f9;
+  border-radius: 4px;
+  color: black;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.selling-notice .left {
+  flex: 0 0 75px;
+}
+
+.selling-notice .right {
+  flex: 1;
+}
+
+.selling-notice .subtitle {
+  font-weight: bold;
+  font-size: larger;
+  margin: 5px 0;
+}
+
+.selling-notice p:last-of-type {
+  margin-bottom: 0;
+  font-size: smaller;
+  color: gray;
+}
+
+.selling-notice hr {
+  margin: 10px 0;
+}
+
+.sellers {
+  margin-right: 30px;
+}
+
+.sellers .thumbnail {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid rgba(0,0,0,.125);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.sellers .thumbnail:last-of-type {
+  position: relative;
+  margin-top: 3px;
+}
+
+@media (max-width: 549px) {
+  .selling-notice {
+    flex-direction: column;
+  }
+
+  .sellers .thumbnail {
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.selling-notice .buy-description {
+  margin-bottom: 10px;
+}
+
+.contact-methods {
+  list-style-type: none;
+  clear: both;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-methods a {
+  font-family: "Helvetica Neue";
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.contact-methods .icon {
+  width: 20px;
+  vertical-align: middle;
+  padding-right: 10px;
+}

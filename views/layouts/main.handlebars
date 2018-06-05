@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <base href="/">
+
+  <meta charset="utf-8">
+
+  {{#if item}}
+    <meta property="og:title" content="{{item.title}}" />
+    <meta property="og:description" content="{{item.description}}" />
+    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:type" content="product.item" />
+    <meta property="og:url" content="http://vente-garage.aclement.com/items/{{item.id}}" />
+    {{#if item.price}}<meta property="product:price:amount" content="{{item.price}}" />{{/if}}
+    <meta property="product:price:currency" content="$" />
+    {{#if category}}<meta property="product:category" content="{{ category.name }}" />{{/if}}
+    {{#if item.brand}}<meta property="product:brand" content="{{item.brand}}" />{{/if}}
+    {{#if item.image}}<meta property="og:image" content="{{item.image}}" />{{/if}}
+  {{else}}
+    <meta property="og:title" content="Vente de garage" />
+    <meta property="og:description" content="Vente de garage pré-déménagement de Alex et Johann" />
+    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:image" content="http://vente-garage.aclement.com/images/chat-vente-garage.jpg" />
+  {{/if}}
+
+  <title>Vente de garage</title>
+  <meta name="description" content="Vente de garage pré-déménagement de Alex et Johann">
+  <meta name="author" content="Alexandre Clément">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="stylesheets/normalize.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="container">
+      <div class="row">
+        <h1><a href="/"><img src="images/house.png" class="house-icon"> Vente de garage</a></h1>
+        {{#if category}}<div class="category">{{ category.name }}</div>{{/if}}
+      </div>
+    </div>
+  </div>
+
+{{{ body }}}
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<div class="main container item-detail">
+  <h4>{{ item.title }}</h4>
+
+  <div class="row">
+    {{#if item.image }}
+      <div class="four columns pictures">
+        {{#if item.image }}<a href="{{ item.image }}" target="_blank"><img class="picture" src="{{ item.image }}"/></a>{{/if}}
+        {{#if item.image2 }}<a href="{{ item.image2 }}" target="_blank"><img class="picture" src="{{ item.image2 }}"/></a>{{/if}}
+      </div>
+    {{/if}}
+
+    <div class="eight columns">
+      {{#if item.sold }}
+        <div class="sold-banner">Item vendu</div>
+      {{else}}
+        {{#if item.price}}
+          <p class="price">
+            {{ item.price }} $
+          </p>
+        {{else}}
+          <p class="price -free">À donner</p>
+        {{/if}}
+      {{/if}}
+
+      <p class="short-description">{{ item.description }}</p>
+
+      <dl>
+        {{#if item.color}}<dt>Couleur</dt> <dd>{{ item.color }}</dd>{{/if}}
+        {{#if item.size}}<dt>Grandeur</dt> <dd>{{ item.size }}</dd>{{/if}}
+        {{#if item.brand}}<dt>Marque</dt> <dd>{{ item.brand }}</dd>{{/if}}
+        {{#if item.currentCondition}}<dt>Usure/état</dt> <dd>{{ item.currentCondition }}</dd>{{/if}}
+        {{#if item.year}}<dt>Année d'achat</dt> <dd>{{ item.year }}</dd>{{/if}}
+        {{#if item.originalPrice}}<dt>Valeur originale</dt> <dd>{{ item.originalPrice }} $</dd>{{/if}}
+        {{#if item.website}}<dt>Site Web</dt> <dd><img src="images/external-link.svg" class="icon"> <a href="{{ item.website }}" target="_blank">{{ item.urlDescription }}</a></dd>{{/if}}
+      </dl>
+
+      {{#unless item.sold }}
+        {{> buying-info}}
+      {{/unless}}
+    </div>
+  </div>
+</div>
