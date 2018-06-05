@@ -16,6 +16,13 @@ router.param('category', (req, res, next, categorySlug) => {
 
 router.param('id', (req, res, next, id) => {
   Item.findOne({ _id: id }).exec((error, item) => {
+    if (error || !item) {
+      const err = new Error('Item introuvable');
+      err.status = 404;
+      next(err);
+      return;
+    }
+
     req.item = item;
     next();
   });
