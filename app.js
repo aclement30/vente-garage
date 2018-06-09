@@ -18,7 +18,8 @@ const app = express();
 var handlebars = expressHandlebars.create({
   defaultLayout: 'main',
   partials: {
-    'buying-info': '{{buying-info}}'
+    'buying-info': '{{buying-info}}',
+    'card-item': '{{card-item}}'
   }
 });
 app.engine('handlebars', handlebars.engine);

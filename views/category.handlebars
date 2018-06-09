@@ -1,0 +1,15 @@
+<div class="main container">
+  <div class="row">
+    <h4 class="category-title">{{ category.name }}</h4>
+
+    {{#if category.description}}<p class="category-description">{{ category.description }}</p>{{/if}}
+
+    <div class="items-list">
+      {{#each items}}
+        {{> card-item}}
+      {{/each}}
+    </div>
+
+    {{> buying-info}}
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<a href="/items/{{ _id }}" class="card-item four columns{{#if sold }} -sold{{/if}}">
+  <div class="card-thumbnail" style="background-image: url('{{ image }}');"></div>
+  <div class="card-body">
+    <h5>{{ title }}</h5>
+
+    {{#if price}}
+      <p class="price">
+        {{ price }} $
+        {{#if originalPrice}}<span class="original-price">{{ originalPrice }} $</span>{{/if}}
+      </p>
+    {{else}}
+      <p class="price -free">
+        {{#if sold }}
+          &mdash;
+        {{else}}
+          À donner
+        {{/if}}</p>
+    {{/if}}
+  </div>
+  {{#if sold }}<div class="sold-banner">Vendu</div>{{/if}}
+</a>

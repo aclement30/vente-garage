@@ -264,7 +264,7 @@ a:hover {
   border-radius: .25rem;
 }
 
-.selling-notice {
+.buying-info {
   padding: 2rem 3rem 2.5rem;
   font-size: 90%;
   background-color: #eaf0f9;
@@ -274,27 +274,27 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.selling-notice .left {
+.buying-info .left {
   flex: 0 0 75px;
 }
 
-.selling-notice .right {
+.buying-info .right {
   flex: 1;
 }
 
-.selling-notice .subtitle {
+.buying-info .subtitle {
   font-weight: bold;
   font-size: larger;
   margin: 5px 0;
 }
 
-.selling-notice p:last-of-type {
+.buying-info p:last-of-type {
   margin-bottom: 0;
   font-size: smaller;
   color: gray;
 }
 
-.selling-notice hr {
+.buying-info hr {
   margin: 10px 0;
 }
 
@@ -318,7 +318,7 @@ a:hover {
 }
 
 @media (max-width: 549px) {
-  .selling-notice {
+  .buying-info {
     flex-direction: column;
   }
 
@@ -328,7 +328,7 @@ a:hover {
   }
 }
 
-.selling-notice .buy-description {
+.buying-info .buy-description {
   margin-bottom: 10px;
 }
 

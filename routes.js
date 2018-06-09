@@ -7,11 +7,19 @@ const Item = require('./models/item');
 
 /* Router params */
 
-router.param('category', (req, res, next, categorySlug) => {
-  Category.findOne({ slug: categorySlug }).exec((error, category) => {
-    req.category = category;
-    next();
-  });
+router.param('category', async (req, res, next, categorySlug) => {
+  req.category = await Category.findOne({ slug: categorySlug });
+
+  if (!req.category) {
+    const err = new Error('Catégorie introuvable');
+    err.status = 404;
+    next(err);
+    return;
+  }
+
+  req.items = await Item.find({ deleted: false, category: categorySlug }).sort({ sold: 1 });
+
+  next();
 });
 
 router.param('id', (req, res, next, id) => {
@@ -49,6 +57,14 @@ router.get('/items/:id', (req, res, next) => {
     title: req.item.title,
     item: req.item,
     category: req.categories.find(category => (category.slug === req.item.category)),
+  });
+});
+
+router.get('/categorie/:category', (req, res, next) => {
+  res.render('category', {
+    title: 'Catégorie',
+    category: req.category,
+    items: req.items,
   });
 });
 
